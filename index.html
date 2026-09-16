@@ -33,7 +33,7 @@
         header {
             height: 85vh;
             /* Foto real del Peñón de Ifach en Calpe */
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1628157748430-61f95368f773?auto=format&fit=crop&q=80&w=1920') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://www.directoalpaladar.com/viajes/48-horas-calpe-que-ver-que-hacer-ciudades-bonitas-costa-blanca-alicante') center/cover;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; color: white; padding: 0 20px;
         }
@@ -118,9 +118,9 @@
 <body>
 
     <nav>
-        <div class="logo">🌊 Calpe '24</div>
+        <div class="logo"> Calpe '27</div>
         <ul>
-            <li><a href="#alojamiento">El Apartamento</a></li>
+            <li><a href="#alojamiento">Apartamento</a></li>
             <li><a href="#calas">Calas</a></li>
             <li><a href="#denia">Fiesta</a></li>
             <li><a href="#presupuesto">Presupuesto</a></li>
@@ -129,15 +129,14 @@
 
     <header>
         <h1>Destino Calpe</h1>
-        <p>Madrid ➔ Calpe en coche. 8 Amigas. Apartamento gratis. Viaje épico.</p>
-        <a href="#presupuesto" class="btn">Ver lo poco que nos cuesta</a>
+        <p>Madrid ➔ Calpe en coche. 8 Amigas. Apartamento gratis. Viaje top.</p>
     </header>
 
     <section id="alojamiento">
         <div class="apartment-box">
             <h3> Nuestro Apartamento</h3>
-            <p>Tenemos el alojamiento solucionado al 100%. A coste CERO. Esto es un lujo que nos permite gastar el dinero en lo que de verdad importa: disfrutar y salir. 
-               <span class="highlight-beach"> Y lo mejor de todoes que está a menos de1 minuto de la playa!</span>
+            <p>Tenemos el alojamiento solucionado al 100%. A coste CERO. Esto es un lujo que nos permite gastar el dinero en lo que de verdad importa fiesta, disfrutar y comida.
+               <span class="highlight-beach"> Y lo mejor de todo es que está a menos de1 minuto de la playa!</span>
             </p>
             <div class="photo-placeholder">
                 [Aquí pondré las fotos del apartamento más adelante]
@@ -147,8 +146,6 @@
 
     <section id="calas">
         <h2 class="title">Ruta de Calas Cercanas </h2>
-        <p style="text-align: center; margin-bottom: 2rem; color: #555;"><i>Desliza hacia la derecha para verlas todas 👉</i></p>
-        
         <div class="slider-container">
             <!-- Usando fotos de calas del Mediterráneo/Alicante de Unsplash -->
             <div class="cala-card">
@@ -191,19 +188,19 @@
 
         <div class="pros-cons-grid">
             <div class="box pros">
-                <h3>✅ Por qué merece la pena</h3>
+                <h3> Por qué merece la pena</h3>
                 <ul>
-                    <li><b>El Ambiente:</b> En Dénia están los mejores tardeos y discotecas de la zona (tipo Condado, Zensa).</li>
-                    <li><b>Flexibilidad:</b> Al llevar dos coches, volvemos al apartamento cuando nos apetezca sin depender de taxis.</li>
+                    <li><b>El Ambiente:</b> En Dénia están los mejores tardeos y discotecas de la zona.</li>
+                    <li><b>Flexibilidad:</b> Al llevar dos coches, volvemos al apartamento cuando nos apetezca sin depender de taxis y poder hacer otras cosas</li>
                     <li><b>Cero coste de casa:</b> Como no pagamos alojamiento, nos podemos permitir gastar un poco más en la gasolina de esos 30 min.</li>
                 </ul>
             </div>
             <div class="box cons">
                 <h3> Cosas a tener en cuenta</h3>
                 <ul>
-                    <li><b>Conductoras designadas:</b> 2 de nosotras no podrán beber cada noche (¡haremos turnos justos!).</li>
+                    <li><b>Conductoras designadas:</b> 2 de nosotras beberemos despues de llegar alli pero no es un problema. (previa corta en el coche ya alli y yo me ofrezco como voluntaria)</li>
                     <li><b>Peaje/Gasolina extra:</b> Son unos 70km ida y vuelta por noche. (Tranquilas, la calculadora ya incluye este gasto).</li>
-                    <li><b>Aparcamiento:</b> Habrá que salir con algo de tiempo para aparcar cerca de la zona del puerto en Dénia.</li>
+                    <li><b>Aparcamiento:</b> Tengo que mirar donde s epuede aparcar cerca d ela fiesta pero no creo que sea un gran problema</li>
                 </ul>
             </div>
         </div>
@@ -226,9 +223,8 @@
             <div class="form-group">
                 <label>Nivel de vida (Comida y Fiesta)</label>
                 <select id="input-estilo">
-                    <option value="15">Modo Ahorro (Bocatas cala, cocinar en casa, beber antes de salir) - ~15€/día</option>
-                    <option value="30" selected>Modo Medio (Comer en casa, cenar fuera algún día, copas) - ~30€/día</option>
-                    <option value="50">Modo Reinas (Chiringuitos, paellas, reservados en Dénia) - ~50€/día</option>
+                    <option value="15">Modo Ahorro (Bocatas para las cala, cocinar en casa, beber moderadamente) - ~15€/día</option>
+                    <option value="25" selected>Modo Medio (Comer en casa, cenar fuera algún día, copas y gastos inncesarios) - ~25€/día</option>
                 </select>
             </div>
 
@@ -302,8 +298,8 @@
             document.getElementById('resultado').style.display = 'block';
             document.getElementById('precio-total').innerText = totalFinalPersona.toFixed(2) + ' €';
             
-            document.getElementById('desglose-gasolina').innerHTML = `🚗 Gasolina (Viaje desde Madrid + ${nochesDenia} noches a Dénia): <strong>${gasolinaPorPersona.toFixed(2)} €</strong>`;
-            document.getElementById('desglose-comida').innerHTML = `🍔 Comida, bebida y entradas (${dias} días): <strong>${comidaYFiestaPorPersona.toFixed(2)} €</strong>`;
+            document.getElementById('desglose-gasolina').innerHTML = `Gasolina (Viaje desde Madrid + ${nochesDenia} noches a Dénia): <strong>${gasolinaPorPersona.toFixed(2)} €</strong>`;
+            document.getElementById('desglose-comida').innerHTML = ` Comida, bebida y entradas (${dias} días): <strong>${comidaYFiestaPorPersona.toFixed(2)} €</strong>`;
         }
     </script>
 </body>

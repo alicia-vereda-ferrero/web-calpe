@@ -3,360 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verano en Calpe | El Mejor Destino</title>
+    <title>Viaje a Calpe | El Plan Perfecto</title>
     <style>
-        /* CSS: Dando estilo y belleza a la web */
+        /* ESTILOS Y COLORES */
         :root {
-            --primary-color: #008080; /* Teal de verano */
-            --secondary-color: #ff7f50; /* Coral para la fiesta */
-            --bg-color: #f4f7f6;
-            --text-color: #333;
+            --primary: #0077b6; /* Azul mar */
+            --secondary: #ff8fa3; /* Rosa atardecer */
+            --accent: #ffd166; /* Amarillo sol */
+            --bg: #f8f9fa;
+            --text: #2b2d42;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-
-        /* Navegación */
+        /* NAVEGACIÓN */
         nav {
-            background-color: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: white; padding: 1rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
+        nav .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
+        nav a:hover { color: var(--secondary); }
 
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Hero Section (Cabecera) */
+        /* CABECERA (FOTO DE CALPE REAL) */
         header {
-            height: 80vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1596701062351-8c2c14d1f274?auto=format&fit=crop&q=80&w=1920') center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
+            height: 85vh;
+            /* Foto real del Peñón de Ifach en Calpe */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1628157748430-61f95368f773?auto=format&fit=crop&q=80&w=1920') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 20px;
         }
-
-        header h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        header p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
+        header h1 { font-size: 4.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        header p { font-size: 1.5rem; margin-bottom: 2rem; font-weight: 300; }
         .btn {
-            padding: 15px 30px;
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.2s;
+            padding: 15px 35px; background-color: var(--secondary); color: white;
+            border: none; border-radius: 30px; font-size: 1.2rem; font-weight: bold;
+            cursor: pointer; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 143, 163, 0.4);
+        }
+        .btn:hover { transform: translateY(-3px); background-color: #ff748c; }
+
+        section { padding: 5rem 5%; }
+        h2.title { text-align: center; font-size: 2.8rem; margin-bottom: 3rem; color: var(--primary); }
+
+        /* APARTAMENTO (PLACEHOLDER) */
+        .apartment-box {
+            background: white; border: 3px dashed var(--primary); border-radius: 20px;
+            padding: 4rem 2rem; text-align: center; margin: 0 auto 4rem auto; max-width: 800px;
+        }
+        .apartment-box h3 { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;}
+        .apartment-box p { font-size: 1.1rem; margin-bottom: 2rem; color: #555; line-height: 1.6;}
+        .highlight-beach { color: var(--secondary); font-weight: bold; font-size: 1.2rem; display: block; margin-top: 10px; }
+        .photo-placeholder {
+            background: #e9ecef; width: 100%; height: 300px; border-radius: 10px;
+            display: flex; justify-content: center; align-items: center; color: #888; font-style: italic;
         }
 
-        .btn:hover {
-            transform: scale(1.05);
-            background-color: #ff6b35;
+        /* SLIDER DE CALAS (CARRUSEL DESLIZABLE) */
+        .slider-container {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+            gap: 2rem; padding-bottom: 2rem;
+            /* Ocultar barra de scroll en navegadores */
+            scrollbar-width: none; 
         }
-
-        /* Secciones Generales */
-        section {
-            padding: 5rem 5%;
+        .slider-container::-webkit-scrollbar { display: none; }
+        
+        .cala-card {
+            min-width: 300px; max-width: 350px; scroll-snap-align: start;
+            background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        .cala-card img { width: 100%; height: 250px; object-fit: cover; }
+        .cala-card div { padding: 1.5rem; }
+        .cala-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
 
-        h2.section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
+        /* PROS Y CONTRAS DENIA */
+        .pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
+        .box { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .pros h3 { color: #2a9d8f; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;}
+        .cons h3 { color: #e76f51; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;}
+        .box ul { list-style-position: inside; line-height: 1.8; }
+        .box li { margin-bottom: 10px; }
+
+        /* CALCULADORA */
+        .calculator {
+            background: white; padding: 3rem; border-radius: 20px;
+            max-width: 700px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--accent);
         }
-
-        /* Tarjetas (Planes y Fiesta) */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.8rem; font-weight: bold; color: #444; }
+        .form-group input, .form-group select {
+            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 1rem; outline: none; transition: 0.3s;
         }
-
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        .form-group input:focus, .form-group select:focus { border-color: var(--primary); }
+        
+        .result-box {
+            margin-top: 2rem; padding: 2rem; background-color: var(--bg); border-radius: 15px; text-align: center; display: none;
         }
+        .result-box h4 { font-size: 1.2rem; color: #666; margin-bottom: 0.5rem; }
+        .result-box .big-price { font-size: 3.5rem; color: var(--primary); font-weight: 900; margin-bottom: 1rem; }
+        .breakdown { font-size: 0.95rem; color: #555; background: white; padding: 1rem; border-radius: 10px; text-align: left;}
 
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Sección Presupuesto */
-        .budget-calculator {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        #resultado-presupuesto {
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: #e0f7fa;
-            border-radius: 10px;
-            text-align: center;
-            display: none; /* Se muestra con JS */
-        }
-
-        #resultado-presupuesto h3 {
-            color: var(--primary-color);
-            font-size: 2rem;
-        }
-
-        footer {
-            background: var(--text-color);
-            color: white;
-            text-align: center;
-            padding: 2rem;
+        /* Móvil responsive */
+        @media (max-width: 768px) {
+            .pros-cons-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 3rem; }
+            nav ul { gap: 1rem; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Menú de Navegación -->
     <nav>
-        <div class="logo">🌴 Destino Calpe</div>
+        <div class="logo">🌊 Calpe '24</div>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#planes">Planes</a></li>
-            <li><a href="#fiesta">Fiesta</a></li>
+            <li><a href="#alojamiento">El Apartamento</a></li>
+            <li><a href="#calas">Calas</a></li>
+            <li><a href="#denia">Fiesta</a></li>
             <li><a href="#presupuesto">Presupuesto</a></li>
         </ul>
     </nav>
 
-    <!-- Cabecera / Portada -->
-    <header id="inicio">
-        <h1>Este verano nos vamos a Calpe</h1>
-        <p>Sol, calas increíbles, ambientazo y el mejor viaje de amigas.</p>
-        <a href="#presupuesto" class="btn">Calcular nuestro viaje</a>
+    <header>
+        <h1>Destino Calpe</h1>
+        <p>Madrid ➔ Calpe en coche. 8 Amigas. Apartamento gratis. Viaje épico.</p>
+        <a href="#presupuesto" class="btn">Ver lo poco que nos cuesta</a>
     </header>
 
-    <!-- Sección de Planes -->
-    <section id="planes">
-        <h2 class="section-title">Qué vamos a hacer</h2>
-        <div class="grid-container">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1616854157140-5b7fbfe11fba?auto=format&fit=crop&q=80&w=600" alt="Playa">
-                <div class="card-content">
-                    <h3>Día de Playa y Calas</h3>
-                    <p>Relax en la Playa de la Fossa y ruta de snorkel por la Cala El Racó o Cala Gasparet. ¡Agua cristalina garantizada!</p>
+    <section id="alojamiento">
+        <div class="apartment-box">
+            <h3>🏠 Nuestro Apartamento</h3>
+            <p>Tenemos el alojamiento solucionado al 100%. A coste CERO. Esto es un lujo que nos permite gastar el dinero en lo que de verdad importa: disfrutar y salir. 
+               <span class="highlight-beach">🏖️ Y lo mejor de todo: ¡Está a literalmente 1 minuto caminando de la playa!</span>
+            </p>
+            <div class="photo-placeholder">
+                [Aquí pondré las fotos del apartamento más adelante]
+            </div>
+        </div>
+    </section>
+
+    <section id="calas">
+        <h2 class="title">Ruta de Calas Cercanas 🐠</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: #555;"><i>Desliza hacia la derecha para verlas todas 👉</i></p>
+        
+        <div class="slider-container">
+            <!-- Usando fotos de calas del Mediterráneo/Alicante de Unsplash -->
+            <div class="cala-card">
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=600" alt="Cala 1">
+                <div>
+                    <h3>Cala del Moraig</h3>
+                    <p>Agua cristalina, perfecta para bucear y llevarnos unos bocatas. Está súper cerca en coche.</p>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&q=80&w=600" alt="Peñón">
-                <div class="card-content">
-                    <h3>Subida al Peñón de Ifach</h3>
-                    <p>Para posturear un poco y ganarnos la cena. Subida al atardecer para ver las mejores vistas de toda la Costa Blanca.</p>
+            <div class="cala-card">
+                <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&q=80&w=600" alt="Cala 2">
+                <div>
+                    <h3>Cala El Racó</h3>
+                    <p>Justo a los pies del Peñón de Ifach en Calpe. Es pequeña pero tiene un ambiente increíble.</p>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=600" alt="Chiringuito">
-                <div class="card-content">
-                    <h3>Tardeo y Paella</h3>
-                    <p>Comer arroz del senyoret frente al mar y empalmar con un buen tardeo en los chiringuitos de la costa.</p>
+            <div class="cala-card">
+                <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&q=80&w=600" alt="Cala 3">
+                <div>
+                    <h3>Cala Granadella</h3>
+                    <p>Un pelín más lejos pero votada como la mejor cala de España. Hay que ir sí o sí un día.</p>
+                </div>
+            </div>
+            <div class="cala-card">
+                <img src="https://images.unsplash.com/photo-1596701062351-8c2c14d1f274?auto=format&fit=crop&q=80&w=600" alt="Cala 4">
+                <div>
+                    <h3>Cala Baladrar</h3>
+                    <p>Tiene un chiringuito genial para tomarnos algo con música en directo después del baño.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Fiesta -->
-    <section id="fiesta" style="background-color: white;">
-        <h2 class="section-title">La Noche en Calpe 🪩</h2>
-        <div class="grid-container">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=600" alt="Club">
-                <div class="card-content">
-                    <h3>Pubs del Casco Antiguo</h3>
-                    <p>Empezamos la noche tomando algo por las calles pintorescas del centro. Bebida barata y mucho ambiente.</p>
-                </div>
+    <section id="denia" style="background-color: white;">
+        <h2 class="title">La Noche: Misión Dénia 🪩</h2>
+        <p style="text-align: center; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Seamos sinceras, en Calpe la fiesta está más muerta. Dénia está a unos 35 min en coche y es donde está TODO el ambiente de verano en la zona. 
+            Como llevamos los dos coches, esta es la estrategia perfecta.
+        </p>
+
+        <div class="pros-cons-grid">
+            <div class="box pros">
+                <h3>✅ Por qué merece la pena</h3>
+                <ul>
+                    <li><b>El Ambiente:</b> En Dénia están los mejores tardeos y discotecas de la zona (tipo Condado, Zensa).</li>
+                    <li><b>Flexibilidad:</b> Al llevar dos coches, volvemos al apartamento cuando nos apetezca sin depender de taxis.</li>
+                    <li><b>Cero coste de casa:</b> Como no pagamos alojamiento, nos podemos permitir gastar un poco más en la gasolina de esos 30 min.</li>
+                </ul>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b78a?auto=format&fit=crop&q=80&w=600" alt="Cocktails">
-                <div class="card-content">
-                    <h3>Discotecas y Beach Clubs</h3>
-                    <p>Zonas como el Camaleón o discotecas por Benidorm (está a solo 20 min en taxi o TRAM) si queremos liarla a lo grande.</p>
-                </div>
+            <div class="box cons">
+                <h3>⚠️ Cosas a tener en cuenta</h3>
+                <ul>
+                    <li><b>Conductoras designadas:</b> 2 de nosotras no podrán beber cada noche (¡haremos turnos justos!).</li>
+                    <li><b>Peaje/Gasolina extra:</b> Son unos 70km ida y vuelta por noche. (Tranquilas, la calculadora ya incluye este gasto).</li>
+                    <li><b>Aparcamiento:</b> Habrá que salir con algo de tiempo para aparcar cerca de la zona del puerto en Dénia.</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Presupuesto (JavaScript Interactividad) -->
     <section id="presupuesto">
-        <h2 class="section-title">Calculadora del Viaje 💰</h2>
-        <div class="budget-calculator">
-            <p style="margin-bottom: 20px; text-align: center;">Dime los datos y te calculo por cuánto nos sale la broma.</p>
-            
+        <h2 class="title">Calculadora de Gastos Reales ⛽🍕</h2>
+        
+        <div class="calculator">
             <div class="form-group">
-                <label for="num-amigas">¿Cuántas amigas somos?</label>
-                <input type="number" id="num-amigas" min="2" value="4">
-            </div>
-            
-            <div class="form-group">
-                <label for="num-dias">¿Cuántos días vamos?</label>
-                <input type="number" id="num-dias" min="1" value="5">
+                <label>¿Cuántos días enteros vamos a estar?</label>
+                <input type="number" id="input-dias" min="2" value="5">
             </div>
 
             <div class="form-group">
-                <label for="tipo-viaje">Nivel de despilfarro</label>
-                <select id="tipo-viaje" style="width: 100%; padding: 10px; border-radius: 5px;">
-                    <option value="lowcost">Modo ahorro (Bocata y botellón)</option>
-                    <option value="medio" selected>Medio (Cenitas y alguna copa)</option>
-                    <option value="lujo">A todo trapo (Reservados y marisco)</option>
+                <label>¿Cuántas noches cogeremos el coche para ir de fiesta a Dénia?</label>
+                <input type="number" id="input-fiestas" min="0" value="3">
+            </div>
+
+            <div class="form-group">
+                <label>Nivel de vida (Comida y Fiesta)</label>
+                <select id="input-estilo">
+                    <option value="15">Modo Ahorro (Bocatas cala, cocinar en casa, beber antes de salir) - ~15€/día</option>
+                    <option value="30" selected>Modo Medio (Comer en casa, cenar fuera algún día, copas) - ~30€/día</option>
+                    <option value="50">Modo Reinas (Chiringuitos, paellas, reservados en Dénia) - ~50€/día</option>
                 </select>
             </div>
 
-            <button class="btn" style="width: 100%;" onclick="calcularPresupuesto()">Calcular Precio</button>
+            <button class="btn" style="width: 100%; margin-top: 10px;" onclick="calcularTodo()">Calcular Presupuesto</button>
 
-            <div id="resultado-presupuesto">
-                <p>El precio estimado TOTAL por persona será de:</p>
-                <h3 id="precio-final">0 €</h3>
-                <p style="font-size: 0.9rem; margin-top: 10px; color: #666;" id="desglose"></p>
+            <div id="resultado" class="result-box">
+                <h4>Total estimado por persona (TODO INCLUIDO)</h4>
+                <div class="big-price" id="precio-total">0 €</div>
+                
+                <div class="breakdown">
+                    <strong>Desglose exacto por persona:</strong>
+                    <ul style="margin-top: 10px; list-style: none;">
+                        <li>🏠 Alojamiento: <strong>0 €</strong> (¡Casa gratis a 1 min de la playa!)</li>
+                        <li id="desglose-gasolina">🚗 Gasolina: 0 €</li>
+                        <li id="desglose-comida">🍔 Comida y Fiesta: 0 €</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.8rem; color: #777;">
+                        *Cálculo de gasolina basado en 2 coches (4 pers/coche). Viaje Madrid-Calpe (470km x2) + Viajes Calpe-Dénia (35km x2 por noche). Consumo medio 7.5L/100km a 1.65€/L.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>Creado para convencer a mis amigas de que Calpe es EL DESTINO ❤️</p>
-    </footer>
-
-    <!-- JAVASCRIPT: Lógica de la página -->
+    <!-- LÓGICA JAVASCRIPT -->
     <script>
-        // Smooth scrolling para el menú
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Calculadora de presupuesto
-        function calcularPresupuesto() {
-            // Obtener los valores del formulario
-            const numAmigas = document.getElementById('num-amigas').value;
-            const numDias = document.getElementById('num-dias').value;
-            const tipoViaje = document.getElementById('tipo-viaje').value;
+        // Calculadora
+        function calcularTodo() {
+            const dias = parseInt(document.getElementById('input-dias').value);
+            const nochesDenia = parseInt(document.getElementById('input-fiestas').value);
+            const gastoDiario = parseInt(document.getElementById('input-estilo').value);
 
-            // Precios base por día estimados (Alojamiento + Comida + Fiesta)
-            let costePorDia = 0;
-            let alojamientoPorNoche = 35; // Airbnb dividido
+            // VARIABLES FIJAS DEL GRUPO
+            const numPersonas = 8;
+            const numCoches = 2;
+            const personasPorCoche = numPersonas / numCoches; // 4
 
-            if (tipoViaje === 'lowcost') {
-                costePorDia = 25; // Supermercado, comida barata
-                alojamientoPorNoche = 25;
-            } else if (tipoViaje === 'medio') {
-                costePorDia = 50; // Restaurantes normales, algunas copas
-                alojamientoPorNoche = 40;
-            } else if (tipoViaje === 'lujo') {
-                costePorDia = 90; // Beach clubs, buenos restaurantes
-                alojamientoPorNoche = 70;
-            }
+            // DATOS DE GASOLINA APROXIMADOS
+            const precioLitro = 1.65; // Precio medio de la gasolina €
+            const consumoCoche = 7.5; // Litros por cada 100km
 
-            // Cálculos
-            const totalAlojamiento = alojamientoPorNoche * (numDias - 1);
-            const totalGastos = costePorDia * numDias;
-            const transporteAprox = 60; // Gasolina/Tren ida y vuelta promedio
+            // 1. GASTO GASOLINA: MADRID - CALPE (Ida y Vuelta)
+            const kmMadridCalpe = 470; 
+            const kmTotalesMadrid = kmMadridCalpe * 2; // Ida y vuelta
+            const costeMadridPorCoche = (kmTotalesMadrid / 100) * consumoCoche * precioLitro;
 
-            const totalPorPersona = totalAlojamiento + totalGastos + transporteAprox;
-            const totalGrupo = totalPorPersona * numAmigas;
+            // 2. GASTO GASOLINA: CALPE - DENIA (Ida y Vuelta)
+            const kmCalpeDenia = 35;
+            const kmTotalesDeniaPorNoche = kmCalpeDenia * 2; // Ida y vuelta por noche
+            const costeDeniaPorCoche = (kmTotalesDeniaPorNoche / 100) * consumoCoche * precioLitro * nochesDenia;
 
-            // Mostrar resultados
-            document.getElementById('resultado-presupuesto').style.display = 'block';
-            document.getElementById('precio-final').innerText = totalPorPersona.toFixed(2) + ' € / pers.';
+            // TOTAL GASOLINA POR PERSONA (se divide el coste del coche entre los 4 que van en él)
+            const totalGasolinaPorCoche = costeMadridPorCoche + costeDeniaPorCoche;
+            const gasolinaPorPersona = totalGasolinaPorCoche / personasPorCoche;
+
+            // 3. GASTOS DE COMIDA Y FIESTA POR PERSONA
+            const comidaYFiestaPorPersona = gastoDiario * dias;
+
+            // 4. TOTAL FINAL
+            const totalFinalPersona = gasolinaPorPersona + comidaYFiestaPorPersona;
+
+            // MOSTRAR RESULTADOS
+            document.getElementById('resultado').style.display = 'block';
+            document.getElementById('precio-total').innerText = totalFinalPersona.toFixed(2) + ' €';
             
-            // Desglose
-            document.getElementById('desglose').innerHTML = `
-                Alojamiento: ${totalAlojamiento}€ | Gastos diarios: ${totalGastos}€ | Transporte: ${transporteAprox}€ <br>
-                <strong>Total para las ${numAmigas} amigas: ${totalGrupo.toFixed(2)} €</strong>
-            `;
+            document.getElementById('desglose-gasolina').innerHTML = `🚗 Gasolina (Viaje desde Madrid + ${nochesDenia} noches a Dénia): <strong>${gasolinaPorPersona.toFixed(2)} €</strong>`;
+            document.getElementById('desglose-comida').innerHTML = `🍔 Comida, bebida y entradas (${dias} días): <strong>${comidaYFiestaPorPersona.toFixed(2)} €</strong>`;
         }
     </script>
 </body>

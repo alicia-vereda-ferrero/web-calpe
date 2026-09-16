@@ -108,10 +108,60 @@
         .breakdown { font-size: 0.95rem; color: #555; background: white; padding: 1rem; border-radius: 10px; text-align: left;}
 
         /* Móvil responsive */
+        /* =========================================
+           📱 DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+           ========================================= */
+
+        /* Para pantallas medianas (Tablets) */
+        @media (max-width: 1024px) {
+            header h1 { font-size: 3.5rem; }
+            .pros-cons-grid { gap: 1rem; }
+            .abuela-house, .apartment-box { padding: 3rem 1.5rem; }
+        }
+
+        /* Para pantallas pequeñas (Móviles) */
         @media (max-width: 768px) {
-            .pros-cons-grid { grid-template-columns: 1fr; }
-            header h1 { font-size: 3rem; }
-            nav ul { gap: 1rem; font-size: 0.9rem; }
+            /* Menú superior: se pone en columna o más pequeño */
+            nav { 
+                flex-direction: column; 
+                gap: 1rem; 
+                padding: 1rem; 
+            }
+            nav ul { 
+                flex-wrap: wrap; /* Si no caben, bajan de línea */
+                justify-content: center; 
+                gap: 1rem; 
+            }
+            
+            /* Cabecera principal */
+            header { height: 70vh; }
+            header h1 { font-size: 2.8rem; }
+            header p { font-size: 1.1rem; }
+            
+            /* Títulos de secciones */
+            h2.title { font-size: 2.2rem; }
+            section { padding: 3rem 5%; }
+
+            /* Tarjetas de Pros y Contras: se ponen una debajo de otra */
+            .pros-cons-grid { 
+                grid-template-columns: 1fr; 
+            }
+
+            /* Calculadora */
+            .calculator { padding: 2rem 1.5rem; }
+            .result-box .big-price { font-size: 2.5rem; }
+            
+            /* Ajustes del carrusel de calas para móviles */
+            .cala-card { 
+                min-width: 260px; /* Un poco más estrechas en móvil */
+            }
+        }
+
+        /* Para móviles muy estrechos */
+        @media (max-width: 480px) {
+            header h1 { font-size: 2.2rem; }
+            .btn { padding: 12px 25px; font-size: 1rem; }
+            .apartment-box h3 { font-size: 1.8rem; }
         }
     </style>
 </head>

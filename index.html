@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verano en Calpe | El Mejor Destino</title>
+    <style>
+        /* CSS: Dando estilo y belleza a la web */
+        :root {
+            --primary-color: #008080; /* Teal de verano */
+            --secondary-color: #ff7f50; /* Coral para la fiesta */
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Navegación */
+        nav {
+            background-color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section (Cabecera) */
+        header {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1596701062351-8c2c14d1f274?auto=format&fit=crop&q=80&w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #ff6b35;
+        }
+
+        /* Secciones Generales */
+        section {
+            padding: 5rem 5%;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        /* Tarjetas (Planes y Fiesta) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sección Presupuesto */
+        .budget-calculator {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #resultado-presupuesto {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #e0f7fa;
+            border-radius: 10px;
+            text-align: center;
+            display: none; /* Se muestra con JS */
+        }
+
+        #resultado-presupuesto h3 {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de Navegación -->
+    <nav>
+        <div class="logo">🌴 Destino Calpe</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#planes">Planes</a></li>
+            <li><a href="#fiesta">Fiesta</a></li>
+            <li><a href="#presupuesto">Presupuesto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cabecera / Portada -->
+    <header id="inicio">
+        <h1>Este verano nos vamos a Calpe</h1>
+        <p>Sol, calas increíbles, ambientazo y el mejor viaje de amigas.</p>
+        <a href="#presupuesto" class="btn">Calcular nuestro viaje</a>
+    </header>
+
+    <!-- Sección de Planes -->
+    <section id="planes">
+        <h2 class="section-title">Qué vamos a hacer</h2>
+        <div class="grid-container">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1616854157140-5b7fbfe11fba?auto=format&fit=crop&q=80&w=600" alt="Playa">
+                <div class="card-content">
+                    <h3>Día de Playa y Calas</h3>
+                    <p>Relax en la Playa de la Fossa y ruta de snorkel por la Cala El Racó o Cala Gasparet. ¡Agua cristalina garantizada!</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&q=80&w=600" alt="Peñón">
+                <div class="card-content">
+                    <h3>Subida al Peñón de Ifach</h3>
+                    <p>Para posturear un poco y ganarnos la cena. Subida al atardecer para ver las mejores vistas de toda la Costa Blanca.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=600" alt="Chiringuito">
+                <div class="card-content">
+                    <h3>Tardeo y Paella</h3>
+                    <p>Comer arroz del senyoret frente al mar y empalmar con un buen tardeo en los chiringuitos de la costa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Fiesta -->
+    <section id="fiesta" style="background-color: white;">
+        <h2 class="section-title">La Noche en Calpe 🪩</h2>
+        <div class="grid-container">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=600" alt="Club">
+                <div class="card-content">
+                    <h3>Pubs del Casco Antiguo</h3>
+                    <p>Empezamos la noche tomando algo por las calles pintorescas del centro. Bebida barata y mucho ambiente.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b78a?auto=format&fit=crop&q=80&w=600" alt="Cocktails">
+                <div class="card-content">
+                    <h3>Discotecas y Beach Clubs</h3>
+                    <p>Zonas como el Camaleón o discotecas por Benidorm (está a solo 20 min en taxi o TRAM) si queremos liarla a lo grande.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Presupuesto (JavaScript Interactividad) -->
+    <section id="presupuesto">
+        <h2 class="section-title">Calculadora del Viaje 💰</h2>
+        <div class="budget-calculator">
+            <p style="margin-bottom: 20px; text-align: center;">Dime los datos y te calculo por cuánto nos sale la broma.</p>
+            
+            <div class="form-group">
+                <label for="num-amigas">¿Cuántas amigas somos?</label>
+                <input type="number" id="num-amigas" min="2" value="4">
+            </div>
+            
+            <div class="form-group">
+                <label for="num-dias">¿Cuántos días vamos?</label>
+                <input type="number" id="num-dias" min="1" value="5">
+            </div>
+
+            <div class="form-group">
+                <label for="tipo-viaje">Nivel de despilfarro</label>
+                <select id="tipo-viaje" style="width: 100%; padding: 10px; border-radius: 5px;">
+                    <option value="lowcost">Modo ahorro (Bocata y botellón)</option>
+                    <option value="medio" selected>Medio (Cenitas y alguna copa)</option>
+                    <option value="lujo">A todo trapo (Reservados y marisco)</option>
+                </select>
+            </div>
+
+            <button class="btn" style="width: 100%;" onclick="calcularPresupuesto()">Calcular Precio</button>
+
+            <div id="resultado-presupuesto">
+                <p>El precio estimado TOTAL por persona será de:</p>
+                <h3 id="precio-final">0 €</h3>
+                <p style="font-size: 0.9rem; margin-top: 10px; color: #666;" id="desglose"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Creado para convencer a mis amigas de que Calpe es EL DESTINO ❤️</p>
+    </footer>
+
+    <!-- JAVASCRIPT: Lógica de la página -->
+    <script>
+        // Smooth scrolling para el menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Calculadora de presupuesto
+        function calcularPresupuesto() {
+            // Obtener los valores del formulario
+            const numAmigas = document.getElementById('num-amigas').value;
+            const numDias = document.getElementById('num-dias').value;
+            const tipoViaje = document.getElementById('tipo-viaje').value;
+
+            // Precios base por día estimados (Alojamiento + Comida + Fiesta)
+            let costePorDia = 0;
+            let alojamientoPorNoche = 35; // Airbnb dividido
+
+            if (tipoViaje === 'lowcost') {
+                costePorDia = 25; // Supermercado, comida barata
+                alojamientoPorNoche = 25;
+            } else if (tipoViaje === 'medio') {
+                costePorDia = 50; // Restaurantes normales, algunas copas
+                alojamientoPorNoche = 40;
+            } else if (tipoViaje === 'lujo') {
+                costePorDia = 90; // Beach clubs, buenos restaurantes
+                alojamientoPorNoche = 70;
+            }
+
+            // Cálculos
+            const totalAlojamiento = alojamientoPorNoche * (numDias - 1);
+            const totalGastos = costePorDia * numDias;
+            const transporteAprox = 60; // Gasolina/Tren ida y vuelta promedio
+
+            const totalPorPersona = totalAlojamiento + totalGastos + transporteAprox;
+            const totalGrupo = totalPorPersona * numAmigas;
+
+            // Mostrar resultados
+            document.getElementById('resultado-presupuesto').style.display = 'block';
+            document.getElementById('precio-final').innerText = totalPorPersona.toFixed(2) + ' € / pers.';
+            
+            // Desglose
+            document.getElementById('desglose').innerHTML = `
+                Alojamiento: ${totalAlojamiento}€ | Gastos diarios: ${totalGastos}€ | Transporte: ${transporteAprox}€ <br>
+                <strong>Total para las ${numAmigas} amigas: ${totalGrupo.toFixed(2)} €</strong>
+            `;
+        }
+    </script>
+</body>
+</html>
